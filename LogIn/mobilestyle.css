@@ -17,8 +17,15 @@ body>div{
     font-size: 30px;
     align-items: baseline;
 }
-#Nombre{
+#Email{
     display: flex;
     flex-direction: row;
     align-items:center;
+}
+.email{
+    border-radius: 100px;
+    padding: 10px;
+    border: 2px solid #C9DF8A;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
