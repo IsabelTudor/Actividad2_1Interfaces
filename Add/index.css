@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-image: url(./images/image\ 1.png);
+}
+header{
+    border-radius: 5%;
+    background: #EAEDD6;
+}
