@@ -60,7 +60,7 @@ a{
     
 }
 
-@media screen  and (min-width:1000px){
+@media screen  and (min-width:900px){
     body>div{
         margin: 5% 15%;
         
