@@ -9,18 +9,16 @@ body{
     display: none;
 }
 #logo{
-    width: 5%;
+    width: 6vh;
 }
 header{
     border-radius: 5%;
     background: #EAEDD6;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 5%;
-    padding: 3%;
+    justify-content: space-around;
+    margin-bottom: 3%;
+    padding: 1%;
 }
 #Isabel{
     border-radius: 16%;
@@ -29,7 +27,7 @@ header{
     color: #5B774D;
     text-align: center;
     font-family: Song Myung;
-    font-size: 100%;
+    font-size: 1.5em;
     padding: 25%;
     
 }
@@ -38,16 +36,15 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-content: center;
 }
 h1{
     color: #36802D;
     font-family: Yeseva One;
     font-size: 3em;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
-    padding: 5%;
-    margin-bottom: 5%;
+    padding: 3%;
+    margin-bottom: 2%;
 }
 .ponerFoto{
     background-color: #FFF;
@@ -62,7 +59,6 @@ h1{
 #insert{
     display: flex;
     flex-direction: column;
-    
 }
 input{
     margin-bottom: 10%;
@@ -70,18 +66,13 @@ input{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border-radius: 100px;
     border: 1px ;
-    padding: 9%;
+    padding: 5%;
 }
-
 input::placeholder{
     text-align: center;
     color: rgba(0, 0, 0, 0.25);
     font-family: Roboto;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    
+    font-size: 2em;
 }
 #PUBLISH{
     border-radius: 100px;
@@ -89,32 +80,32 @@ input::placeholder{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     color: #FFF8F8;
     font-family: Song Myung;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    font-size: 2em;
     margin-bottom: 5%;
+    margin-top: 2%;
 }
 @media screen  and (min-width:800px){
     #Search{
         display: block;
-        padding-right: 90%;
+        width: 40vw;
+        padding: 2%;
         text-align: left;
-     }
+    }
+    #Frame{
+        width: 3vh;
+        height: 3vh;
+    }
     #id{
        display: block;
     }
     .search{
         display: flex;
         flex-direction: row;
-        margin-right: 20%;
-        gap: 10%;
-    }
-    #logo{
-        width: 6%;
+        
     }
     header{
         padding: 1%;
+        align-content: center;
     }
     .user{
         display: flex;
@@ -143,11 +134,10 @@ input::placeholder{
         grid-area: insert;
         display: flex;
         flex-direction: column;
-        justify-content: right;
         margin: 5%;
     }
     input{
-        margin-bottom: 10%;
+        margin-bottom: 6%;
         background: #FFF;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         border-radius: 100px;
@@ -158,12 +148,15 @@ input::placeholder{
     input::placeholder{
         text-align: start;
     }
-    #Price,#Type{
-        margin: auto;
+    #Description{
+        padding: 6%;
+    }
+    form input[id="Type"]{
+        width: 40%;
     }
     #imagen{
-        width: 50%;
-        height: 50%;
+        width: 25vh;
+        height: 20vh;
     }
     
 }
