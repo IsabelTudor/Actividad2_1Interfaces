@@ -2,18 +2,19 @@
     margin: 0;
     padding: 0;
 }
+
 header{
     border-radius: 5px;
     background: #F0F7DA;
     display: grid;
-    grid-template-areas: 'logo ... contenido';
-    grid-template-columns: repeat(3,1fr);
-    justify-content: space-around;
+    grid-template-areas: 'logo  contenido';
+    grid-template-columns: 20%  80%;
+    justify-content: space-between;
     align-items: center;
     margin: auto;
     margin-bottom: 2%;
+    padding: 1%
 }
-
 .content{
     grid-area: contenido;
     display: flex;
@@ -48,6 +49,7 @@ section{
     display: flex;
     justify-content: space-between;
     margin-bottom: 3%;
+    margin-top: 6%;
 }
 .types{
     display: none;
@@ -62,11 +64,149 @@ a{
     text-decoration: none;
 }
 main{
+    margin-top: 5%;
     border-radius: 4px;
     background: #D2DFD4;
     display: flex;
     padding: 3%;
     justify-content: space-around;
 }
+.vectorMainGirado,#VectorTypes{
+    transform: rotate(180deg);
+}
+#content{
+    background-color: white;
+    padding: 3% 5%;
+    text-align: center;
+}
+.text{
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    margin-bottom: 5%;
+}
+#name{
+    color: #0C2706;
+    font-family: Yeseva One;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+#price{color: #000;
+    font-family: Roboto;
+    font-size:1 em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+#PURCHASE{
+    border: 1px solid #36802D;
+    padding: 5% 9%;
+    border-radius: 100px;
+    background: #36802D;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+#basura{
+    display: flex;
+    justify-content: flex-end;
+}
+footer{
+    background: #F0F7DA;
+    margin-top: 7%;
+}
+#redesSociales{
+    display: flex;
+    padding: 5%;
+    justify-content: center;
+    gap: 5%; 
+}
+#N2,#N3{
+    display: none;
+}
+@media screen  and (min-width:800px){
+    header{
+        padding: 0;
+        margin-bottom: 2%;
+    }
+    #content{
+        gap: 5%;
+        grid-area: content;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+    #anyadir{
+        display: flex;
+        flex-direction: row;
+    }
+    #anyadir>a>img{
+        height: 5vh;
+    }
+    #Frame{
+        height: 3vh;
+    }
+    #search>input{
+        display: block;
+        border:1px solid white;
+        border-radius: 100px;
+        background: #FFF;
+        width: 40vw;
+        height: 5vh;
+    }
+    #search{
+        display: flex;
+        align-items: center;
+    }
+    .user>img{
+        display: block;
+    }
+    .user{
+        display: flex;
+        gap:10%;
+    }
+    #user{
+        font-size: 1.5em;
+        padding: 10%;
+    }
+    section>img{
+        display: none;
+    }
+    .types{display: block;
+    }
+    section{
+        margin: 0 15%;
+        padding: 1.5%;
+        font-size: 1.5em;
+    }
+    #N2,#N3{
+        display: block;
+    }
+    footer{
+        margin-top: 2%;
+    }
+    #redesSociales{
+        padding: 1%;
+    } 
+    main{
+        display: grid;
+        grid-template-areas: 'content content content'
+        'vectorMain ... vectorMainGirado';
+    }
+    .vectorMain{
+        grid-area: vectorMain;
+    }
+    .vectorMainGirado{
+        grid-area: vectorMainGirado;
+    }
 
+
+    
+}
 

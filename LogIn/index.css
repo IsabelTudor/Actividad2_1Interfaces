@@ -50,20 +50,10 @@ a{
     font-weight: 400;
     cursor: pointer;
 }
-.grupo1{
-    position: absolute;
-
-}
-.grupo2{
-    position: relative;
-   
-    
-}
 
 @media screen  and (min-width:900px){
     body>div{
         margin: 5% 15%;
-        
     }
 
 }
