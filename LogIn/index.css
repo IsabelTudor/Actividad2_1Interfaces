@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 body {
     background: #F0F7DA;
 }
@@ -15,7 +19,7 @@ body>div{
     display: flex;
     flex-direction: row;
     color: #36802D;
-    font-family: Yeseva One;
+    font-family: 'Yeseva One';
     font-size: 2em;
     align-items: baseline;
     margin-bottom: 10%;
@@ -45,7 +49,7 @@ body>div{
 }
 a{
     color: #585123;
-    font-family: Source Serif Pro;
+    font-family: 'Source Serif Pro';
     font-size: 95%;
     font-weight: 400;
     cursor: pointer;
