@@ -34,13 +34,13 @@ header{
     padding: 25%;
     color: #5B774D;
     text-align: center;
-    font-family: Song Myung;
+    font-family: 'Song Myung';
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
-section{
+body section{
     border-radius: 100px;
     border: 0.5px solid #000;
     background: #EFF6EF;
@@ -62,6 +62,9 @@ a{
     font-weight: 400;
     line-height: normal;
     text-decoration: none;
+}
+a:visited{
+    color: darkgreen;
 }
 main{
     margin-top: 5%;
@@ -87,7 +90,7 @@ main{
 }
 #name{
     color: #0C2706;
-    font-family: Yeseva One;
+    font-family: 'Yeseva One';
     font-size: 1em;
     font-style: normal;
     font-weight: 400;
