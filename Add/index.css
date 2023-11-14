@@ -26,7 +26,7 @@ header{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     color: #5B774D;
     text-align: center;
-    font-family: Song Myung;
+    font-family: 'Song Myung';
     font-size: 1.5em;
     padding: 25%;
     
@@ -40,13 +40,13 @@ main{
 }
 h1{
     color: #36802D;
-    font-family: Yeseva One;
+    font-family: 'Yeseva One';
     font-size: 3em;
     font-weight: 400;
     padding: 3%;
     margin-bottom: 2%;
 }
-.ponerFoto{
+h1 + div{
     background-color: #FFF;
     display: flex;
     justify-content: center;
@@ -74,12 +74,13 @@ input::placeholder{
     font-family: Roboto;
     font-size: 2em;
 }
+input:hover{border: 1px solid brown;}
 #PUBLISH{
     border-radius: 100px;
     background: #36802D;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     color: #FFF8F8;
-    font-family: Song Myung;
+    font-family: 'Song Myung';
     font-size: 2em;
     margin-bottom: 5%;
     margin-top: 2%;
@@ -88,10 +89,10 @@ input::placeholder{
     #Search{
         display: block;
         width: 40vw;
-        padding: 2%;
+        padding: 1%;
         text-align: left;
     }
-    #Frame{
+    div > img{
         width: 3vh;
         height: 3vh;
     }
@@ -101,13 +102,12 @@ input::placeholder{
     .search{
         display: flex;
         flex-direction: row;
-        
     }
     header{
         padding: 1%;
         align-content: center;
     }
-    .user{
+    header section{
         display: flex;
         align-items: center;
         gap: 5%;
@@ -119,12 +119,12 @@ input::placeholder{
         grid-template-columns: repeat(2,1fr);
         margin: 3%;
     }
-    h1{
+    main > h1{
         grid-area: titulo;
         text-align: center;
         font-size: 5em;
     }
-    .ponerFoto{
+    h1 + div{
         grid-area: ponerFoto;
         margin: 4%;
         height: 50vh;
@@ -148,15 +148,16 @@ input::placeholder{
     input::placeholder{
         text-align: start;
     }
-    #Description{
+    input.Description{
         padding: 6%;
     }
     form input[id="Type"]{
         width: 40%;
     }
     #imagen{
-        width: 25vh;
+        width: 25vw;
         height: 20vh;
     }
+
     
 }

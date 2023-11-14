@@ -6,8 +6,9 @@
     <title>Document</title>
     <link rel="stylesheet"  type="text/css" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link type="text/css" rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link  type="text/css" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link type="text/css" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Song+Myung&display=swap" rel="stylesheet">
     
 </head>
 <body>
@@ -15,9 +16,9 @@
         <img id="logo" src="./images/Layer_1.png">
         <div class="search">
             <input type="text" id="Search" placeholder="Search" >
-            <img id="Frame" src="./images/Frame.png">
+            <img  src="./images/Frame.png">
         </div>
-        <section class="user">
+        <section>
             <img id="id" src="./images/Capa_1.png">
             <form >
                 <input type="submit" id="Isabel" value="Isabel">
@@ -26,15 +27,15 @@
     </header>
     <main>
         <h1>Insert</h1>
-        <div class="ponerFoto" >
+        <div  >
             <img id="imagen" src="./images/Layer_2.png">
         </div> 
         <form id="insert">
-            <input type="text" id="Name" placeholder="Name">
-            <input type="text" id="Description" placeholder="Description">
-            <input type="text" id="Type" placeholder="Type">
+            <input type="text" placeholder="Name" minlength="5" maxlength="40" required pattern="[A-Za-z]" >
+            <input type="text" class="Description" placeholder="Description">
+            <input type="text" id="Type" placeholder="Type" required>
             <div class="junto">
-                <input type="number" id="Price" placeholder="Price">
+                <input type="number" id="Price" placeholder="Price" pattern="^\d+(\.\d{1,2})?$" required>
                 <input type="submit" id="PUBLISH" value="PUBLISH">
             </div>
             
