@@ -11,7 +11,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Main</title>
-        <link rel="stylesheet" type="text/css" media="screen" href="./index.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="./visualizacion_style.css">
         <link rel="stylesheet" type="text/css" media="print (min-width: 800px)" href="./printstyle.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,18 +22,18 @@
         <header>
             <img id="logo" src="./images/Layer_1.png" alt="logo">
             <div class="content">
-                <div id="search">
+                <form id="search">
                     <input type="text" placeholder="Search">
                     <img id="Frame" src="./images/Frame.png" alt="lupa">
-                </div>
+                </form>
                 <div id="anyadir">
                     <a href="../SignUp/index.html"><img src="./images/SVGRepo_iconCarrier.png" alt="add user"></a>
                     <a href="../Add/index.html"><img src="./images/Layer_2.png" alt="add plant"></a>
                 </div>
-                <div class="user">
+                <form class="user">
                     <img src="./images/Capa_1.png" alt="flor user">
                     <input type="submit" id="user" value="Isabel">
-                </div>
+                </form>
             </div>
         </header>
         <section>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="text">
                        <p id="name">Chrysanthemum</p> 
-                       <p id="price">14.99€</p>
+                       <p class="price">14.99€</p>
                     </div>
                     <form>
                         <input type="submit" id="PURCHASE" value="PURCHASE">

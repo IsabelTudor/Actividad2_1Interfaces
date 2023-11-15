@@ -29,7 +29,6 @@ main{
     display: none;
 }
 #content{
-    gap: 2%;
     grid-area: content;
     display:flex;
     flex-direction: row;

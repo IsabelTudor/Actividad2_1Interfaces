@@ -89,7 +89,7 @@ main{
 .text{
     display: flex;
     justify-content: space-between;
-    gap: 5%;
+    
     margin-bottom: 5%;
 }
 #name{
@@ -100,9 +100,10 @@ main{
     font-weight: 400;
     line-height: normal;
 }
-#price{color: #000;
+.price{
+    color: #000;
     font-family: Roboto;
-    font-size:1 em;
+    font-size:1em;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -131,7 +132,7 @@ footer{
     display: flex;
     padding: 5%;
     justify-content: center;
-    gap: 5%; 
+   
 }
 #N2,#N3{
     display: none;
@@ -142,7 +143,7 @@ footer{
         margin-bottom: 1%;
     }
     #content{
-        gap: 2%;
+        
         grid-area: content;
         display:flex;
         flex-direction: row;
@@ -175,7 +176,7 @@ footer{
     }
     .user{
         display: flex;
-        gap:10%;
+        
     }
     #user{
         font-size: 1.5em;
