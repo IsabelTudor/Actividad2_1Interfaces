@@ -1,0 +1,45 @@
+#search{
+    display:none
+}
+#anyadir{
+    display: none;
+}
+body section ul{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    box-shadow: none;
+}
+body section img{
+    display: none;
+}
+li{
+    list-style: inside;
+}
+.types{display: block;
+}
+#N2,#N3{
+    display: block;
+}
+main{
+    display: grid;
+    grid-template-areas: 'content content content';
+}
+.vectorMain,.vectorMainGirado{
+    display: none;
+}
+#content{
+    gap: 2%;
+    grid-area: content;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.user{
+    display: none;
+}
+@media print {
+    #N2, #N3 {
+        display: none;
+    }
+}

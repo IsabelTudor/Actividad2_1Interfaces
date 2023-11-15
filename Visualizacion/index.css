@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
 }
-
 header{
     border-radius: 5px;
     background: #F0F7DA;
@@ -12,7 +11,6 @@ header{
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    margin-bottom: 2%;
     padding: 1%
 }
 .content{
@@ -40,34 +38,40 @@ header{
     font-weight: 400;
     line-height: normal;
 }
-body section{
+body section ul{
     border-radius: 100px;
     border: 0.5px solid #000;
     background: #EFF6EF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); 
     padding: 2%;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 3%;
-    margin-top: 6%;
+    margin-bottom: 2%;
+    margin-top: 3%;
 }
 .types{
     display: none;
 }
-a{
+li{
     color: #656063;
     font-family: Roboto;
     font-size: 1em;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    list-style: none;
     text-decoration: none;
 }
 a:visited{
     color: darkgreen;
 }
+a{
+    text-decoration: none;
+}
+
 main{
-    margin-top: 5%;
+    margin-top: 2%;
     border-radius: 4px;
     background: #D2DFD4;
     display: flex;
@@ -135,15 +139,14 @@ footer{
 @media screen  and (min-width:800px){
     header{
         padding: 0;
-        margin-bottom: 2%;
+        margin-bottom: 1%;
     }
     #content{
-        gap: 5%;
+        gap: 2%;
         grid-area: content;
         display:flex;
         flex-direction: row;
         justify-content: space-between;
-        
     }
     #anyadir{
         display: flex;
@@ -178,7 +181,7 @@ footer{
         font-size: 1.5em;
         padding: 10%;
     }
-    section>img{
+    ul>img{
         display: none;
     }
     .types{display: block;
@@ -208,8 +211,4 @@ footer{
     .vectorMainGirado{
         grid-area: vectorMainGirado;
     }
-
-
-    
 }
-
