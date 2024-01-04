@@ -13,6 +13,7 @@ header{
     margin: auto;
     padding: 1%
 }
+
 .content{
     grid-area: contenido;
     display: flex;
@@ -126,11 +127,11 @@ main{
 }
 footer{
     background: #F0F7DA;
-    margin-top: 7%;
+    margin-top: 5%;
 }
 #redesSociales{
     display: flex;
-    padding: 5%;
+    padding: 3%;
     justify-content: center;
    
 }
@@ -140,14 +141,14 @@ footer{
 @media screen  and (min-width:800px){
     header{
         padding: 0;
-        margin-bottom: 1%;
+        height: 10vh;
     }
     #content{
-        
         grid-area: content;
         display:flex;
         flex-direction: row;
         justify-content: space-between;
+       
     }
     #anyadir{
         display: flex;
@@ -189,7 +190,7 @@ footer{
     }
     section{
         margin: 0 15%;
-        padding: 1.5%;
+        padding: 1%;
         font-size: 1.5em;
     }
     #N2,#N3{

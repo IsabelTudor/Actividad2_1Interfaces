@@ -16,34 +16,37 @@
     <header>
         <h1>Sign up</h1>
     </header>
-    <div>
-        <img src="./images/Capa_1.png" class="flor" alt="flor">
-        <input type="text" placeholder="First name" pattern="[a-zA-ZÀ-ÖØ-öø-ÿ'-\s]+" 
-        title="Ingrese un nombre válido. Solo se permiten letras, apóstrofes, guiones y espacios."
-        required>
+    <form>
+        <div>
+            <img src="./images/Capa_1.png" class="flor" alt="flor">
+            <input type="text" placeholder="First name" pattern="[a-zA-ZÀ-ÖØ-öø-ÿ'-\s]+" 
+            title="Ingrese un nombre válido. Solo se permiten letras, apóstrofes, guiones y espacios."
+            required>
+        </div>
+        <div>
+            <img src="./images/Capa_1.png"  class="flor"  alt="flor">
+            <input type="text" placeholder="Last name" pattern="[a-zA-ZÀ-ÖØ-öø-ÿ'-]+" 
+            title="Ingrese apellidos válidos. Solo se permiten letras, apóstrofes y guiones."
+            required>
+        </div>
+        <div>
+            <img src="./images/Capa_1.png"  class="flor" alt="flor">
+            <input type="tel" placeholder="Phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" 
+            title="Ingrese un número de teléfono válido en formato xxx-xxx-xxx.">
+        </div>
+        <div>
+            <img src="./images/Capa_1.png"  class="flor"  alt="flor">
+            <input type="email" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+        </div>
+        <div>
+            <img src="./images/Capa_1.png" class="flor"  alt="flor">
+            <input type="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$" 
+            title="La contraseña debe contener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número."
+            required>
+        </div>
+        <input type="submit" id="maceta-btn" value="Log In">
     </div>
-    <div>
-        <img src="./images/Capa_1.png"  class="flor"  alt="flor">
-        <input type="text" placeholder="Last name" pattern="[a-zA-ZÀ-ÖØ-öø-ÿ'-]+" 
-        title="Ingrese apellidos válidos. Solo se permiten letras, apóstrofes y guiones."
-        required>
-    </div>
-    <div>
-        <img src="./images/Capa_1.png"  class="flor" alt="flor">
-        <input type="tel" placeholder="Phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" 
-        title="Ingrese un número de teléfono válido en formato xxx-xxx-xxx.">
-    </div>
-    <div>
-        <img src="./images/Capa_1.png"  class="flor"  alt="flor">
-        <input type="email" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
-    </div>
-    <div>
-        <img src="./images/Capa_1.png" class="flor"  alt="flor">
-        <input type="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$" 
-        title="La contraseña debe contener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número."
-        required>
-    </div>
-    <a href="../Visualizacion/index.html"><img src="./images/GroupSignIn.png" class="groupIn" alt="maceta"></a>
-    </div>
+    
+</form>
 </body>
 </html>
