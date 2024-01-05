@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link  rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link type="text/css" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Yeseva+One&display=swap" rel="stylesheet">
-    
+    <script src="./formulario.js"></script>
 </head>
 <body>
     <div>
@@ -22,19 +22,20 @@
             </svg>
         </div>
         <div id="contenido">
-          <form >
+          <form action="formulario.js" method="POST" >
             <div id="Email">
                 <img src="./images/Capa_1.png" alt="flor user">
-                <input class="email" type="text" placeholder="Email">
+                <input class="email" type="text" placeholder="Email" id="Email">
             </div>
             <div id="Password">
-                 <input class="pass" type="password" placeholder="Password"  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$" 
+                 <input class="pass" type="password" placeholder="Password" id="Password"  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$" 
                 title="La contraseña debe contener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número."
                 required>
             <img src="./images/Capa_2.png"  alt="flor password">
             </div>
            
             <sub><a href="../SignUp/index.html">New user?</a></sub>
+            <span id="spanError"></span>
             <input type="submit" id="maceta-btn" value="Log In">
           </form>
           
