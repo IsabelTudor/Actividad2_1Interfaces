@@ -1,5 +1,5 @@
 const URL_SERVER ="http://3.234.32.136:3000/";
-document.addEventListener("DOMContentLoaded",inicioSesion,{once:true});
+document.addEventListener("DOMContentLoaded",inicioSesion());
 
 function inicioSesion(){
     fetch(URL_SERVER+"users/")
@@ -31,7 +31,7 @@ function comprobarSesion(Email, Password){
             password:passwordIntroducido
         }
         localStorage.setItem('user',JSON.stringify(user));
-        window.location.href="../Visualizacion/index.html";
+        
     }else{
         document.getElementById('spanError').innerHTML+="No se ha encontrado ningun usuario, cree su usuario ahora"
     }
