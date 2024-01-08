@@ -1,5 +1,5 @@
 const URL_SERVER ="http://3.234.32.136:3000/";
-document.addEventListener("DOMContentLoaded",inicioSesion());
+document.addEventListener("DOMContentLoaded",inicioSesion);
 
 function inicioSesion(){
     fetch(URL_SERVER+"users/")
@@ -13,26 +13,34 @@ function inicioSesion(){
         throw new Error("Error en la red");
     })
     .then(data=>{
-        comprobarSesion(data.Email,data.Password)
+        console.log(data);
+        comprobarSesion(data)
     })
-    .catch(error=>{
-        alert("Error de conexion con el servidor, revisa la conexión:"+error);
-    })
+    .catch(error => {
+        if (error instanceof TypeError) {
+            alert("Error de conexión con el servidor. Revisa la conexión.");
+        } else {
+            alert("Error en el servidor: " + error.message);
+        }
+    });
+    
 }
 
+function comprobarSesion(users) {
+    const emailIntroducido = document.getElementById('Email').value;
+    const passwordIntroducido = document.getElementById('Password').value;
 
-function comprobarSesion(Email, Password){
-    const emailIntroducido=document.getElementById('Email').value;
-    const passwordIntroducido=document.getElementById('Password').value;
+    const user = users.find(user => user.Email === emailIntroducido);
 
-    if(emailIntroducido===Email && passwordIntroducido===Password){
-        const user={
-            email:emailIntroducido,
-            password:passwordIntroducido
-        }
-        localStorage.setItem('user',JSON.stringify(user));
-        
-    }else{
-        document.getElementById('spanError').innerHTML+="No se ha encontrado ningun usuario, cree su usuario ahora"
+    if (user && user.Password === passwordIntroducido) {
+        const userData = {
+            email: user.Email,
+            password: user.Password
+        };
+        localStorage.setItem('user', JSON.stringify(userData));
+    } else {
+        document.getElementById('spanError').innerHTML += "No se ha encontrado ningún usuario. Cree su usuario ahora.";
     }
 }
+
+
