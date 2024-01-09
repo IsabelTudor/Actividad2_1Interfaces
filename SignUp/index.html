@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Yeseva+One&display=swap" rel="stylesheet">
-
+<script src="./formulario.js"></script>
 </head>
 <body>
     <img src="./images/image 1.png" alt="plantas">
@@ -16,37 +16,30 @@
     <header>
         <h1>Sign up</h1>
     </header>
-    <form>
+    <form id="formulario">
         <div>
             <img src="./images/Capa_1.png" class="flor" alt="flor">
-            <input type="text" placeholder="First name" pattern="[a-zA-ZÀ-ÖØ-öø-ÿ'-\s]+" 
-            title="Ingrese un nombre válido. Solo se permiten letras, apóstrofes, guiones y espacios."
-            required>
+            <input type="text" placeholder="First name" id="nombre" required>
+            <span id="errorNombre"></span>
         </div>
         <div>
             <img src="./images/Capa_1.png"  class="flor"  alt="flor">
-            <input type="text" placeholder="Last name" pattern="[a-zA-ZÀ-ÖØ-öø-ÿ'-]+" 
-            title="Ingrese apellidos válidos. Solo se permiten letras, apóstrofes y guiones."
-            required>
+            <input type="text" placeholder="Last name" id="apellidos" required>
         </div>
         <div>
             <img src="./images/Capa_1.png"  class="flor" alt="flor">
-            <input type="tel" placeholder="Phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" 
-            title="Ingrese un número de teléfono válido en formato xxx-xxx-xxx.">
+            <input type="tel" placeholder="Phone number" id="telefono">
         </div>
         <div>
             <img src="./images/Capa_1.png"  class="flor"  alt="flor">
-            <input type="email" placeholder="Email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+            <input type="email" placeholder="Email" id="email">
         </div>
         <div>
             <img src="./images/Capa_1.png" class="flor"  alt="flor">
-            <input type="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$" 
-            title="La contraseña debe contener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número."
-            required>
+            <input type="password" id="password" placeholder="Password" required>
         </div>
         <input type="submit" id="maceta-btn" value="Log In">
-    </div>
-    
-</form>
+    </form>
+    <main></main>
 </body>
 </html>
