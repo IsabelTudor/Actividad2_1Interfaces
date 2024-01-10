@@ -21,3 +21,5 @@ function comprobarEmail(e){
     })
 }
 document.getElementById('Email').addEventListener("blur", comprobarEmail);
+//hasta aqui solo comprueba si esta el email en la base de datos
+//ahora tienes que ver si el array esta vacio o no, y asi hacer que compruebe la contraseña
