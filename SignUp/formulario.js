@@ -1,8 +1,9 @@
 const URL_SERVER ="http://3.234.32.136:3000/";
-document.getElementById("formulario").addEventListener("submit",signup);
+document.getElementById('formulario').addEventListener("submit", signup)
 
 function signup(e){
-
+    e.preventDefault();
+    console.log('dentro');
     const nombreIntroducido=document.getElementById('nombre').value;
     const apellidosIntroducido=document.getElementById('apellidos').value;
     const telefonoIntroducido=document.getElementById('telefono').value;
@@ -22,9 +23,9 @@ function signup(e){
         },
         body: JSON.stringify(user)
     };
+   
     fetch(`${URL_SERVER}users/`,options)
     .then((response)=>{
-
         if(response.ok){
             return response.json();
         }else throw new Error(response.status);
@@ -36,6 +37,9 @@ function signup(e){
         console.log(data);
     })
     .catch((error)=>{
+        console.log(error)
         document.querySelector("main").innerHTML="Error al añadir el usuario"
     })
 }
+
+

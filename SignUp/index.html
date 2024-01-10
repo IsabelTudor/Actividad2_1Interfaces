@@ -8,8 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Yeseva+One&display=swap" rel="stylesheet">
-<script src="./formulario.js"></script>
-</head>
+<script src="formulario.js" defer></script>
 <body>
     <img src="./images/image 1.png" alt="plantas">
     <div class="contenido">
@@ -19,26 +18,26 @@
     <form id="formulario">
         <div>
             <img src="./images/Capa_1.png" class="flor" alt="flor">
-            <input type="text" placeholder="First name" id="nombre" required>
+            <input type="text" placeholder="First name" id="nombre" name="nombre" required>
             <span id="errorNombre"></span>
         </div>
         <div>
             <img src="./images/Capa_1.png"  class="flor"  alt="flor">
-            <input type="text" placeholder="Last name" id="apellidos" required>
+            <input type="text" placeholder="Last name" id="apellidos" name="apellidos" required>
         </div>
         <div>
             <img src="./images/Capa_1.png"  class="flor" alt="flor">
-            <input type="tel" placeholder="Phone number" id="telefono">
+            <input type="tel" placeholder="Phone number" id="telefono" name="telefono">
         </div>
         <div>
             <img src="./images/Capa_1.png"  class="flor"  alt="flor">
-            <input type="email" placeholder="Email" id="email">
+            <input type="email" placeholder="Email" id="email" name="email">
         </div>
         <div>
             <img src="./images/Capa_1.png" class="flor"  alt="flor">
-            <input type="password" id="password" placeholder="Password" required>
+            <input type="password" id="password" placeholder="Password" name="password" required>
         </div>
-        <input type="submit" id="maceta-btn" value="Log In">
+        <input type="submit" id="maceta-btn" value="Sign Up">
     </form>
     <main></main>
 </body>

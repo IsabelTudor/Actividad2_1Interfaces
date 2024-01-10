@@ -41,13 +41,13 @@ input[type="submit"]{
    font-size: 30px;
    margin-top: 40px;
 }
-#Email{
+.Email{
     display: flex;
     flex-direction: row;
     align-items:center;
     margin-bottom: 15%;
 }
- #Password{
+ .Password{
     display: flex;
     flex-direction: row;
     align-items:center;

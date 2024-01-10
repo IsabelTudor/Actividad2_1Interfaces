@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link  rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link type="text/css" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Yeseva+One&display=swap" rel="stylesheet">
-    <script src="./formulario.js"></script>
+    <script src="formulario.js" defer></script>
 </head>
 <body>
     <div>
@@ -22,12 +22,12 @@
             </svg>
         </div>
         <div id="contenido">
-          <form action="formulario.js" method="get">
-            <div id="Email">
+          <form id="formulario">
+            <div class="Email">
                 <img src="./images/Capa_1.png" alt="flor user">
                 <input class="email" type="text" placeholder="Email" id="Email">
             </div>
-            <div id="Password">
+            <div class="Password">
                  <input class="pass" type="password" placeholder="Password" id="Password">
             <img src="./images/Capa_2.png"  alt="flor password">
             </div>
