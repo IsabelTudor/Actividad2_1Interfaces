@@ -9,7 +9,7 @@
     <link type="text/css" rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link  type="text/css" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Yeseva+One&display=swap" rel="stylesheet">
     <link type="text/css" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Song+Myung&display=swap" rel="stylesheet">
-    
+    <script src="./formulario.js" defer></script>
 </head>
 <body>
     <header>
@@ -31,11 +31,11 @@
             <img id="imagen" src="./images/Layer_2.png" alt="añadir planta">
         </div> 
         <form id="insert">
-            <input type="text" placeholder="Name" minlength="5" maxlength="40" required pattern="[A-Za-z]" >
-            <input type="text" class="Description" placeholder="Description">
-            <input type="text" id="Type" placeholder="Type" required>
+            <input type="text" placeholder="Name"  id="nombre" >
+            <input type="text" id="description" class="Description" placeholder="Description">
+            <input type="text" id="Type" placeholder="Type" >
             <div class="junto">
-                <input type="number" id="Price" placeholder="Price" pattern="^\d+(\.\d{1,2})?$" required>
+                <input type="text" id="Price" placeholder="Price"  >
                 <input type="submit" id="PUBLISH" value="PUBLISH">
             </div>
         </form>

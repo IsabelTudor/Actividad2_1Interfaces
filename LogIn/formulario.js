@@ -1,9 +1,10 @@
 const URL_SERVER ="http://3.234.32.136:3000/";
+document.getElementById('formulario').addEventListener("submit",comprobar)
 
-
-function comprobarEmail(e){
+function comprobar(e){
     e.preventDefault()
     const emailBuscado=document.getElementById('Email').value;
+    const passwordIntroducido=document.getElementById('Password').value;
     fetch(`${URL_SERVER}users/?email=${emailBuscado}`)
     .then(response=>{
         if(response.ok){
@@ -15,11 +16,24 @@ function comprobarEmail(e){
     })
     .then (data=>{
         console.log(data);
+        if(data.length==0){
+            document.getElementById('SpanError').innerHTML=`No se ha encontrado ningun usuario con ese email.`
+        }else if (data.length==1){
+            document.getElementById('SpanError').innerHTML=``;
+            if(data[0].password!==passwordIntroducido){
+                document.getElementById('SpanError').innerHTML=`Contraseña incorrecta`;
+                document.getElementById('formulario').removeEventListener("submit",comprobar)
+            }else{
+                localStorage.setItem("users", JSON.stringify(data[0]))
+                const emailBuscado=document.getElementById('Email').value=``;
+                const passwordIntroducido=document.getElementById('Password').value=``;
+            }
+        }
     })
     .catch(error=>{
-        document.querySelector('main').innerHTML=`Error de conexion con el servidor.`
+        console.log(error);
+        document.getElementById('SpanError').innerHTML=`Error de conexion con el servidor.`
     })
 }
-document.getElementById('Email').addEventListener("blur", comprobarEmail);
-//hasta aqui solo comprueba si esta el email en la base de datos
-//ahora tienes que ver si el array esta vacio o no, y asi hacer que compruebe la contraseña
+
+
