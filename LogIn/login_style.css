@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
 }
+.invalido{
+    border: 1px solid red;
+    
+}
 body {
     background: #F0F7DA;
 }

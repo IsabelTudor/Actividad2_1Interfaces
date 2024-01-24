@@ -1,5 +1,25 @@
 const URL_SERVER ="http://3.234.32.136:3000/";
 document.getElementById('formulario').addEventListener("submit",comprobar)
+document.addEventListener("DOMContentLoaded",()=>{
+    document.getElementById("Email").addEventListener("blur", validarEmail)
+})
+
+function validarEmail(e){
+    const pattern=/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g
+    const email=document.getElementById("Email");
+    const mensajeError=document.getElementById("SpanError");
+    if(!pattern.test(email.value)){
+        
+    }
+}
+
+
+
+
+
+
+
+
 
 function comprobar(e){
     e.preventDefault()
@@ -25,8 +45,8 @@ function comprobar(e){
                 document.getElementById('formulario').removeEventListener("submit",comprobar)
             }else{
                 localStorage.setItem("users", JSON.stringify(data[0]))
-                const emailBuscado=document.getElementById('Email').value=``;
-                const passwordIntroducido=document.getElementById('Password').value=``;
+                document.getElementById('Email').value=``;
+                document.getElementById('Password').value=``;
             }
         }
     })
