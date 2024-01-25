@@ -1,61 +1,78 @@
 const URL_SERVER ="http://3.234.32.136:3000/";
 
-document.getElementById('insert').addEventListener("submit", insertar);
+document.addEventListener("DOMContentLoaded",()=>{
+    cambiaUser()
+    document.getElementById('insert').addEventListener("submit", insertar);
+})
+function cambiaUser(e){
+    const nombreUsuarioLS=JSON.parse(localStorage.getItem("users"));
+    const user=document.getElementById("username");
+     user.value=nombreUsuarioLS.nombre
+}
 
-function insertar(e){
-    const nameIntroducido=document.getElementById("nombre").value;
-    const descripIntroducida=document.getElementById("description").value;
-    const tipoIntroducido=document.getElementById("Type").value;
-    const precioIntroducido=document.getElementById("Price").value;
-    const plant={
-        "nombre":nameIntroducido,
-        "descripcion":descripIntroducida,
-        "tipo":tipoIntroducido,
-        "precio":precioIntroducido,
-        "imagen":"dfgdgdgd"
-    }
-    const options={
-        method:"POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(plant)
-    }
+
+function insertar(e) {
+    e.preventDefault();
+
+    const nameIntroducido = document.getElementById("nombre").value;
+
     fetch(`${URL_SERVER}plants/?nombre=${nameIntroducido}`)
-    .then(response=>{
-        if(response.ok){
-            return response.json();
-        }else throw new Error (response.status)
-    }, error=>{
-        console.log(error);
-        throw new Error("Error en la red")
-    })
-    .then(data=>{
-        if(data.length==0){
-            console.log(data);
-        }
-    })
-    .catch(error=>{
-        console.log(error);
-        
-    })
-
- }   
-    function enviar(e){
-        e.preventDefault();
-        fetch(`${URL_SERVER}plants/`, options)
-        .then((response)=>{
-            if(response.ok){
+        .then(response => {
+            if (response.ok) {
                 return response.json();
-            }else throw new Error (response.status)
-        },error=>{
-            console.log(error);
-            throw new Error ("Error en la red")
+            } else {
+                throw new Error(response.status);
+            }
         })
-        .then(data=>{
+        .then(data => {
+            if (data.length === 0) {
+                const descripIntroducida = document.getElementById("description").value;
+                const tipoIntroducido = document.getElementById("Type").value;
+                const precioIntroducido = document.getElementById("Price").value;
+
+                const plant = {
+                    "nombre": nameIntroducido,
+                    "descripcion": descripIntroducida,
+                    "tipo": tipoIntroducido,
+                    "precio": precioIntroducido,
+                    "imagen": "dfgdgdgd"
+                };
+
+                const options = {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(plant)
+                };
+
+                enviar(options);
+                limpiar();
+            }
+        })
+        .catch(error => {
+            console.log(error);
+        });
+}
+
+function enviar(options) {
+    fetch(`${URL_SERVER}plants/`, options)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error(response.status);
+            }
+        })
+        .then(data => {
             console.log(data);
         })
-        .catch(error=>{
+        .catch(error => {
             console.log(error);
-        }) 
-    }
+        });
+}
+function limpiar(e){
+    document.getElementById("nombre").value=``;
+    document.getElementById("description").value=``;
+    document.getElementById("Type").value=``;
+    document.getElementById("Price").value=``;
 
-//aqui esta el error , solucionalo
+}

@@ -5,8 +5,11 @@
 body{
     background: url(./images/image\ 1.png);
 }
-#Search,#id{
-    display: none;
+section{display: flex;
+    align-items: center;
+}
+#id{
+    height: 5vh;
 }
 #logo{
     width: 6vh;
@@ -28,8 +31,7 @@ header{
     text-align: center;
     font-family: 'Song Myung';
     font-size: 1.5em;
-    height: 5vh;
-    
+    height: 8vh;
 }
 main{
     background-color: #DBE0BA;
@@ -85,19 +87,12 @@ input:hover{border: 1px solid brown;}
     margin-top: 2%;
 }
 @media screen  and (min-width:800px){
-    #Search{
-        display: block;
-        width: 40vw;
-        padding: 1%;
-        text-align: left;
-    }
+ 
     div > img{
         width: 3vh;
         height: 3vh;
     }
-    #id{
-       display: block;
-    }
+ 
     .search{
         display: flex;
         flex-direction: row;
