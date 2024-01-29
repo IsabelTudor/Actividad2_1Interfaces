@@ -13,11 +13,16 @@ header{
     margin: auto;
     padding: 1%
 }
-
+.slider-container {
+    width: 80vw;
+    margin: 50px auto;
+    overflow: hidden;
+  }
 .content{
     grid-area: contenido;
     display: flex;
     justify-content: space-around;
+    
 }
 #search>input{
     display: none;
@@ -86,6 +91,8 @@ main{
     background-color: white;
     padding: 3% 5%;
     text-align: center;
+    width: 300%; /* Ancho total de todos los slides */
+    animation: slide 10s infinite; /* Duración de la animación */
 }
 .text{
     display: flex;
@@ -135,9 +142,21 @@ footer{
     justify-content: center;
    
 }
-#N2,#N3{
-    display: none;
-}
+/*@keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    33.33% {
+      transform: translateX(-50%);
+    }
+    66.66% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+*/
 @media screen  and (min-width:800px){
     header{
         padding: 0;
@@ -192,9 +211,6 @@ footer{
         margin: 0 15%;
         padding: 1%;
         font-size: 1.5em;
-    }
-    #N2,#N3{
-        display: block;
     }
     footer{
         margin-top: 2%;
