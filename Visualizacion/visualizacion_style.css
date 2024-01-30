@@ -7,25 +7,18 @@ header{
     background: #F0F7DA;
     display: grid;
     grid-template-areas: 'logo  contenido';
-    grid-template-columns: 20%  80%;
+    grid-template-columns: 20vw  70vw;
     justify-content: space-between;
     align-items: center;
     margin: auto;
     padding: 1%
+
+
 }
-.slider-container {
-    width: 80vw;
-    margin: 50px auto;
-    overflow: hidden;
-  }
 .content{
     grid-area: contenido;
     display: flex;
     justify-content: space-around;
-    
-}
-#search>input{
-    display: none;
 }
 .user>img{
     display: none;
@@ -78,29 +71,26 @@ a{
 
 main{
     margin-top: 2%;
-    border-radius: 4px;
     background: #D2DFD4;
     display: flex;
     padding: 3%;
     justify-content: space-around;
-}
-.vectorMainGirado,#VectorTypes{
-    transform: rotate(180deg);
+    width: 100vw;
 }
 #content{
-    background-color: white;
+    width: 80vw;
+}
+.flores{
+    margin: 5px;background-color: white;
     padding: 3% 5%;
     text-align: center;
-    width: 300%; /* Ancho total de todos los slides */
-    animation: slide 10s infinite; /* Duración de la animación */
 }
 .text{
     display: flex;
     justify-content: space-between;
-    
     margin-bottom: 5%;
 }
-#name{
+.name{
     color: #0C2706;
     font-family: 'Yeseva One';
     font-size: 1em;
@@ -116,7 +106,7 @@ main{
     font-weight: 400;
     line-height: normal;
 }
-#PURCHASE{
+.PURCHASE{
     border: 1px solid #36802D;
     padding: 5% 9%;
     border-radius: 100px;
@@ -127,10 +117,12 @@ main{
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    cursor: pointer;
 }
-#basura{
+.basura{
     display: flex;
     justify-content: flex-end;
+    cursor:pointer
 }
 footer{
     background: #F0F7DA;
@@ -142,21 +134,33 @@ footer{
     justify-content: center;
    
 }
-/*@keyframes slide {
-    0% {
-      transform: translateX(0);
-    }
-    33.33% {
-      transform: translateX(-50%);
-    }
-    66.66% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(-200%);
-    }
-  }
-*/
+#addPlanta{
+    width: 4vw;
+    height: 3vh;
+}
+.imagen{
+    width: 181px;
+    border:1px solid black
+}
+.vectorMainGirado,#VectorTypes{
+    transform: rotate(180deg);
+}
+.vectorMain,.vectorMainGirado{
+    display: none;
+}
+#search>input{
+    display: block;
+    border:1px solid white;
+    border-radius: 100px;
+    background: #FFF;
+    width: 40vw;
+    height: 5vh;
+}
+#search{
+    display: flex;
+    align-items: center;
+}
+
 @media screen  and (min-width:800px){
     header{
         padding: 0;
@@ -179,18 +183,7 @@ footer{
     #Frame{
         height: 3vh;
     }
-    #search>input{
-        display: block;
-        border:1px solid white;
-        border-radius: 100px;
-        background: #FFF;
-        width: 40vw;
-        height: 5vh;
-    }
-    #search{
-        display: flex;
-        align-items: center;
-    }
+  
     .user>img{
         display: block;
     }
@@ -225,8 +218,12 @@ footer{
     }
     .vectorMain{
         grid-area: vectorMain;
+        cursor: pointer;
+        display: block;
     }
     .vectorMainGirado{
+        display: block;
         grid-area: vectorMainGirado;
+        cursor: pointer;
     }
 }
