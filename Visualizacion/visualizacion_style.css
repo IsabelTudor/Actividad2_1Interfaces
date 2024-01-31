@@ -62,12 +62,6 @@ li{
     list-style: none;
     text-decoration: none;
 }
-a:visited{
-    color: darkgreen;
-}
-a{
-    text-decoration: none;
-}
 
 main{
     margin-top: 2%;
@@ -134,9 +128,20 @@ footer{
     justify-content: center;
    
 }
+
 #addPlanta{
     width: 4vw;
     height: 3vh;
+}
+button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 100%;
+    cursor: pointer;
+    background: none;
 }
 .imagen{
     width: 181px;
@@ -171,6 +176,7 @@ footer{
         display:flex;
         flex-direction: row;
         justify-content: space-between;
+        flex-wrap: wrap;
        
     }
     #anyadir{

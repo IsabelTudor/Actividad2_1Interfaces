@@ -2,20 +2,81 @@ const URL_SERVER ="http://3.234.32.136:3000/";
 
 document.addEventListener("DOMContentLoaded",()=>{
     cambiaUser(),
-    cargarFlores()
-
-})
+    cargarFlores(),
+    document.getElementById("buscador").addEventListener("input",buscar);
+    document.getElementById("user").addEventListener("click", cerrarSesion)
+   
+});
+    
+document.querySelectorAll('button').forEach(button => {
+    button.addEventListener('click', function() {
+        const tipo = this.innerText;
+        console.log(tipo);
+        fetch(`${URL_SERVER}plants/?tipo=${tipo}`)
+        .then(response => {
+            console.log(response);
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error(response.status);
+            }
+        })
+        .then(data => {
+            document.getElementById("content").innerText=``;
+            pintarFlores(data);
+        })
+        .catch(error => {
+            console.error("Error fetching plants:", error);
+            alert("No se ha podido traer las plantas");
+        });
+      
+    });
+});
+function cerrarSesion(e){
+    localStorage.removeItem("users")
+}
 
 function cambiaUser(e){
     const nombreUsuarioLS=JSON.parse(localStorage.getItem("users"));
     const user=document.getElementById("user");
      user.value=nombreUsuarioLS.nombre
 }
+function filtrar(e){
+    const tipo=document.getElementById('Vines').innerText
+    console.log(tipo);
+}
+
+function buscar(e){
+    e.preventDefault();
+    const input=document.getElementById("buscador");
+    console.log(input.value);
+    if (input.value === "") {
+        cargarFlores();
+        return;
+    }
+    fetch(`${URL_SERVER}plants/?nombre=${input.value}`)
+        .then(response => {
+            console.log(response);
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error(response.status);
+            }
+        })
+        .then(data => {
+            document.getElementById("content").innerText=``;
+            pintarFlores(data);
+        })
+        .catch(error => {
+            console.error("Error fetching plants:", error);
+            alert("No se ha podido traer las plantas");
+        });
+}
 
 function cargarFlores(e) {
     fetch(`${URL_SERVER}plants/`)
         .then(response => {
-            console.log(response); // Log the response details
+            console.log(response); 
             if (response.ok) {
                 return response.json();
             } else {

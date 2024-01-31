@@ -3,13 +3,16 @@ const URL_SERVER ="http://3.234.32.136:3000/";
 document.addEventListener("DOMContentLoaded",()=>{
     cambiaUser()
     document.getElementById('insert').addEventListener("submit", insertar);
+    document.getElementById("user").addEventListener("click", cerrarSesion)
 })
 function cambiaUser(e){
     const nombreUsuarioLS=JSON.parse(localStorage.getItem("users"));
     const user=document.getElementById("username");
      user.value=nombreUsuarioLS.nombre
 }
-
+function cerrarSesion(e){
+    localStorage.removeItem("users")
+}
 
 function insertar(e) {
     e.preventDefault();
@@ -29,13 +32,14 @@ function insertar(e) {
                 const descripIntroducida = document.getElementById("description").value;
                 const tipoIntroducido = document.getElementById("Type").value;
                 const precioIntroducido = document.getElementById("Price").value;
+                const imagenIntroducida=document.getElementById("imagenURL").value
 
                 const plant = {
                     "nombre": nameIntroducido,
                     "descripcion": descripIntroducida,
                     "tipo": tipoIntroducido,
                     "precio": precioIntroducido,
-                    "imagen": "dfgdgdgd"
+                    "imagen": imagenIntroducida
                 };
 
                 const options = {
@@ -74,5 +78,6 @@ function limpiar(e){
     document.getElementById("description").value=``;
     document.getElementById("Type").value=``;
     document.getElementById("Price").value=``;
+    document.getElementById("imagenURL").value=``;
 
 }
