@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     cambiaUser(),
     cargarFlores(),
     document.getElementById("buscador").addEventListener("input",buscar);
-    document.getElementById("user").addEventListener("click", cerrarSesion)
+    document.getElementById("user").addEventListener("click", cerrarSesion);
+    document.getElementById("")
    
 });
     
@@ -20,6 +21,9 @@ document.querySelectorAll('button').forEach(button => {
             } else {
                 throw new Error(response.status);
             }
+        }, error=>{
+            console.log(error);
+            throw new Error ("Error en la red");
         })
         .then(data => {
             document.getElementById("content").innerText=``;
@@ -32,6 +36,8 @@ document.querySelectorAll('button').forEach(button => {
       
     });
 });
+
+
 function cerrarSesion(e){
     localStorage.removeItem("users")
 }
@@ -40,10 +46,6 @@ function cambiaUser(e){
     const nombreUsuarioLS=JSON.parse(localStorage.getItem("users"));
     const user=document.getElementById("user");
      user.value=nombreUsuarioLS.nombre
-}
-function filtrar(e){
-    const tipo=document.getElementById('Vines').innerText
-    console.log(tipo);
 }
 
 function buscar(e){
@@ -62,6 +64,9 @@ function buscar(e){
             } else {
                 throw new Error(response.status);
             }
+        }, error=>{
+            console.log(error);
+            throw new Error ("Error en la red");
         })
         .then(data => {
             document.getElementById("content").innerText=``;
@@ -82,6 +87,9 @@ function cargarFlores(e) {
             } else {
                 throw new Error(response.status);
             }
+        }, error=>{
+            console.log(error);
+            throw new Error ("Error en la red");
         })
         .then(data => {
             console.log(data);
@@ -115,25 +123,42 @@ function pintarFlores(flores){
         const form=document.createElement("form");
         const input=document.createElement("input");
         input.type='submit'
-        input.value=`PURCHASE`;
+        input.value=`Eliminar`;
         input.classList.add("PURCHASE")
-        const divBasura=document.createElement("div");
-        divBasura.classList.add("basura")
-        const imagenBasura=document.createElement("img")
-        imagenBasura.src="https://s3.amazonaws.com/bucketactividad3.1/Basura.png"
-        
-
-        divBasura.append(imagenBasura);
+        input.id=flor.id
+        input.addEventListener("click",()=>{
+            borrar(input.id)
+        })
+    
         form.append(input)
         divTexto.append(pNombre,pPrecio)
         divImagen.append(imagen)
-        divFlor.append(divImagen,divTexto,form,divBasura)
+        divFlor.append(divImagen,divTexto,form)
         divContenido.append(divFlor)
         
     });
-
-    
-
-
+   
 }
-
+function borrar(id){
+    const options = {
+        method: 'DELETE'
+    }
+   
+    fetch(URL_SERVER+"plants/"+id,options)
+    .then((response)=>{
+        if(response.ok){
+            return response.json();
+        }else throw new Error(response.status);
+    }, error=>{
+        console.log(error);
+        throw new Error ("Error en la red");
+    })
+    .then(data=>{
+        document.getElementById("content").innerText=``;
+        cargarFlores();
+    })
+    .catch(error=>{
+        document.querySelector("main").innerHTML="Error al eliminar";
+    })
+        console.log(id);
+    }
