@@ -14,11 +14,13 @@ function validarNombre(e){
     const mensajeError=document.getElementById("errorNombre");
     if(nombre.value.length<2){
         nombre.classList.add("invalido");
+        mensajeError.focus()
         mensajeError.innerText=`Debe tener más de dos caracteres`
         return false;
     }else{
         nombre.classList.remove("invalido");
         mensajeError.innerText=``;
+
         nombre.value=nombre.value.charAt(0).toUpperCase()+nombre.value.substring(1,nombre.value.length).toLowerCase();
         return true;
     }
@@ -28,6 +30,7 @@ function validarApellido(e){
     const mensajeError=document.getElementById("errorApellido");
     if(apellido.value.length<3){
         apellido.classList.add("invalido");
+        mensajeError.focus()
         mensajeError.innerText="El apellido no es valido debe de tener mas de tres caracteres"
         return false;
     }
@@ -46,6 +49,7 @@ function validarTelefono(e){
     const mensajeError=document.getElementById("errorTelefono");
     if(!pattern.test(telefono.value)){
         telefono.classList.add("invalido");
+        mensajeError.focus()
         mensajeError.innerText=`El telefono solo puede tener 9 caracteres y solo números`
         return false
     }else{
@@ -56,11 +60,12 @@ function validarTelefono(e){
 }
 
 function validarEmail(e){
-    const pattern=/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g
+    const pattern=/[a-z0-9!#%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g
     const email=document.getElementById("email");
     const mensajeError=document.getElementById("errorEmail");
     if(!pattern.test(email.value)){
         email.classList.add("invalido");
+        mensajeError.focus()
         mensajeError.innerText=`El formato del email no es correcto`;
         return false;
     }else{
@@ -76,6 +81,7 @@ function validarPassword(e){
     const mensajeError=document.getElementById("errorPassword");
     if(!pattern.test(password.value)){
         password.classList.add("invalido");
+        mensajeError.focus()
         mensajeError.innerText=`Debe tener al menos 8 caracteres, una mayúscula, una minúscula y un dígito.`
         return false
     }else{

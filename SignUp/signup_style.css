@@ -59,7 +59,7 @@ form>div{
     
 }
 #maceta-btn {
-    width: 120px;
+    width: 150px;
     height: 60px;
     background-color: #8B4513;
     border: none;
@@ -67,6 +67,7 @@ form>div{
     position: relative;
     overflow: hidden;
     align-items: center;
+    
   }
   input[type="submit"]{
     color: white;
@@ -75,7 +76,11 @@ form>div{
     margin-top: 40px;
  }
 
-
+ span {
+    background-color: #FFDDDD;
+    border: 1px solid #FF0000;
+    color: red
+}
 @media screen  and (min-width:1000px){
     body{
         display: grid;
@@ -108,9 +113,10 @@ form>div{
         width: 10%;
         height: 100%;
     }
-    .invalido {
+    span {
         background-color: #FFDDDD;
         border: 1px solid #FF0000;
+        color: red
     }
     .obligatorio{
         color: red;

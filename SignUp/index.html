@@ -10,38 +10,41 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Yeseva+One&display=swap" rel="stylesheet">
 <script src="formulario.js" defer></script>
 <body>
-    <img src="https://s3.amazonaws.com/bucketactividad3.1/ImagenComplementaria.png" alt="plantas">
+    <div>
+        
+    </div>
+    <img src="https://s3.amazonaws.com/bucketactividad3.1/ImagenComplementaria.png" alt="Imagen complementaria" role="presentation">
     <div class="contenido">
     <header>
-        <h1>Sign up</h1>
+        <h1 tabindex="0">Sign up</h1>
     </header>
-    <form id="formulario">
+    <form id="formulario" >
         <div>
-            <img src="https://s3.amazonaws.com/bucketactividad3.1/FlorSimple.png" class="flor" alt="flor">
-            <input type="text" placeholder="First name" id="nombre" name="nombre" required>
-            <span id="errorNombre"></span>
+            <img src="https://s3.amazonaws.com/bucketactividad3.1/FlorSimple.png" class="flor" alt="" >
+            <input type="text" placeholder="First name" id="nombre" name="nombre" aria-required="true">
+            <span id="errorNombre" tabindex="-1"></span>
         </div>
         <div>
-            <img src="https://s3.amazonaws.com/bucketactividad3.1/FlorSimple.png"  class="flor"  alt="flor">
-            <input type="text" placeholder="Last name" id="apellidos" name="apellidos" required>
-            <span id="errorApellido"></span>
+            <img src="https://s3.amazonaws.com/bucketactividad3.1/FlorSimple.png"  class="flor"  alt=""  >
+            <input type="text" placeholder="Last name" id="apellidos" name="apellidos" aria-required="true">
+            <span id="errorApellido" tabindex="-1"></span>
         </div>
         <div>
-            <img src="https://s3.amazonaws.com/bucketactividad3.1/FlorSimple.png"  class="flor" alt="flor">
+            <img src="https://s3.amazonaws.com/bucketactividad3.1/FlorSimple.png"  class="flor" alt=""  >
             <input type="tel" placeholder="Phone number" id="telefono" name="telefono">
-            <span id="errorTelefono"></span>
+            <span id="errorTelefono" tabindex="-1"></span>
         </div>
         <div>
-            <img src="https://s3.amazonaws.com/bucketactividad3.1/FlorSimple.png"  class="flor"  alt="flor">
+            <img src="https://s3.amazonaws.com/bucketactividad3.1/FlorSimple.png"  class="flor"  alt="" >
             <input type="email" placeholder="Email" id="email" name="email">
-            <span id="errorEmail"></span>
+            <span id="errorEmail" tabindex="-1"></span>
         </div>
         <div>
-            <img src="https://s3.amazonaws.com/bucketactividad3.1/FlorSimple.png" class="flor"  alt="flor">
-            <input type="password" id="password" placeholder="Password" name="password" required>
-            <span id="errorPassword"></span>
+            <img src="https://s3.amazonaws.com/bucketactividad3.1/FlorSimple.png" class="flor"  alt="" >
+            <input type="password" id="password" placeholder="Password" name="password" aria-required="true">
+            <span id="errorPassword" tabindex="-1"></span>
         </div>
-        <input type="submit" id="maceta-btn" value="Sign Up">
+        <input type="submit" id="maceta-btn" aria-label="Registrarse" role="boton" value="Sign Up">
     </form>
     <main>
         <span id="errorForm"></span>
