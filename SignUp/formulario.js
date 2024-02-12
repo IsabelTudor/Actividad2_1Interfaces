@@ -14,7 +14,7 @@ function validarNombre(e){
     const mensajeError=document.getElementById("errorNombre");
     if(nombre.value.length<2){
         nombre.classList.add("invalido");
-        mensajeError.focus()
+        nombre.focus()
         mensajeError.innerText=`Debe tener más de dos caracteres`
         return false;
     }else{
@@ -30,7 +30,7 @@ function validarApellido(e){
     const mensajeError=document.getElementById("errorApellido");
     if(apellido.value.length<3){
         apellido.classList.add("invalido");
-        mensajeError.focus()
+        apellido.focus()
         mensajeError.innerText="El apellido no es valido debe de tener mas de tres caracteres"
         return false;
     }
@@ -49,7 +49,7 @@ function validarTelefono(e){
     const mensajeError=document.getElementById("errorTelefono");
     if(!pattern.test(telefono.value)){
         telefono.classList.add("invalido");
-        mensajeError.focus()
+        telefono.focus()
         mensajeError.innerText=`El telefono solo puede tener 9 caracteres y solo números`
         return false
     }else{
@@ -65,7 +65,7 @@ function validarEmail(e){
     const mensajeError=document.getElementById("errorEmail");
     if(!pattern.test(email.value)){
         email.classList.add("invalido");
-        mensajeError.focus()
+        email.focus()
         mensajeError.innerText=`El formato del email no es correcto`;
         return false;
     }else{
@@ -81,7 +81,7 @@ function validarPassword(e){
     const mensajeError=document.getElementById("errorPassword");
     if(!pattern.test(password.value)){
         password.classList.add("invalido");
-        mensajeError.focus()
+        password.focus()
         mensajeError.innerText=`Debe tener al menos 8 caracteres, una mayúscula, una minúscula y un dígito.`
         return false
     }else{
@@ -121,7 +121,6 @@ function signup(e){
         const emailIntroducido=document.getElementById('email').value;
         const passwordIntroducido=document.getElementById('password').value;
         signup(nombreIntroducido,apellidosIntroducido,telefonoIntroducido,emailIntroducido,passwordIntroducido)
-        e.target.submit();
     }
 }
 function signup(Nombre,Apellidos,Telefono,Email,Password){
@@ -143,6 +142,7 @@ function signup(Nombre,Apellidos,Telefono,Email,Password){
     fetch(`${URL_SERVER}users/`,options)
     .then((response)=>{
         if(response.ok){
+            document.querySelector("main").innerHTML="Se añadio el usuario correctamente"
             return response.json();
         }else throw new Error(response.status);
     }, error=>{
@@ -154,8 +154,11 @@ function signup(Nombre,Apellidos,Telefono,Email,Password){
     })
     .catch((error)=>{
         console.log(error)
-        document.querySelector("main").innerHTML="Error al añadir el usuario"
+        mostrarError("Error al añadir el usuario");
     })
+}
+function mostrarError(mensaje) {
+    document.getElementById("errorForm").innerText = mensaje;
 }
 
 
